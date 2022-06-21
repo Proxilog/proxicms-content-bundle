@@ -1,0 +1,36 @@
+{
+  "name": "proxilog/proxicms-content-bundle",
+  "type": "symfony-bundle",
+  "version": "0.1.0",
+  "description": "A Symfony Content bundle for ProxiCMS",
+  "keywords": ["symfony", "easyadmin", "content", "content-manager"],
+  "homepage": "https://github.com/Proxilog/proxicms-content-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julien Schermann",
+      "homepage": "https://github.com/Snowbaha"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ProxiCMS\\ContentBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "doctrine/annotations": "^1.13",
+    "doctrine/doctrine-bundle": "^2.7",
+    "doctrine/doctrine-migrations-bundle": "^3.2",
+    "doctrine/orm": "^2.12",
+    "easycorp/easyadmin-bundle": "^4.3",
+    "symfony/form": "6.1.*",
+    "symfony/framework-bundle": "6.1.*",
+    "symfony/security-bundle": "6.1.*",
+    "symfony/twig-bundle": "6.1.*",
+    "twig/twig": "^3.4"
+  },
+  "require-dev": {
+    "doctrine/doctrine-fixtures-bundle": "^3.4"
+  }
+}
