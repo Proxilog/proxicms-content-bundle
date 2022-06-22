@@ -1,7 +1,6 @@
 {
   "name": "proxilog/proxicms-content-bundle",
   "type": "symfony-bundle",
-  "version": "0.2.0",
   "description": "A Symfony Content bundle for ProxiCMS",
   "keywords": ["symfony", "easyadmin", "content", "content-manager"],
   "homepage": "https://github.com/Proxilog/proxicms-content-bundle",

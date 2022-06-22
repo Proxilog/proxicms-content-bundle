@@ -2,16 +2,15 @@
 
 [![Latest Stable Version](https://poser.pugx.org/proxilog/proxicms-content-bundle/v)](https://packagist.org/packages/proxilog/proxicms-content-bundle)
 
-***/!\  Attention, tant que la version 1.0.0 n'est pas sortie, des "breaking changes" sont possible !***
+***/!\  WARNING, Be aware until the version 1.0.0, some breaking changes can be introduce***
 
-Ce Bundle permet de gérer la gestion de contenu du CMS ProxiCMS.
+This bundle allow you to manage the content for the ProxiCMS.
 
 ## TODO
 
-* TODO faire le [Recipes](https://github.com/symfony/recipes-contrib) installation
-* gérer l'intégration de la migration (services ?)
-* gérer les Tests
-* Terminer la documentation
+* Create the [Recipes](https://github.com/symfony/recipes-contrib) installation
+* better use of migration? (any idea?)
+* Create the tests in the bundle (instead of the app side)
 
 ## Usage
 
@@ -28,11 +27,44 @@ When you get the Content with twig, it will create or get the current one by its
 
 ## Installation
 
-* `composer require proxilog/proxicms-content-bundle`
-* Ajouter la class dans `bundles.php`
-    * `ProxiCMS\ContentBundle\ProxiCMSContentBundle::class => ['all' => true],`
-* Ajouter Menu EA
-    * `yield MenuItem::linkToCrud('Contenus', 'fas fa-pager', Content::class)->setController(ContentCrudController::class)`
-    * OU Créer le `ContentCrudController` et étendre celle de notre bundle si besoin de modifier
-* Ajouter la migration `- 'ProxiCMS\ContentBundle\Migrations\MySQL0100'`
-* Ajouter dans le menu EA `yield MenuItem::linkToCrud('Contenus', 'fas fa-pager', Content::class);`
+This bundle requires PHP 8.1 or higher and Symfony 6.1 or higher. 
+
+### Step 1: Install the bundle using composer
+
+```bash
+$ composer require proxilog/proxicms-content-bundle
+```
+
+### Step 2: Add the bundle to your bundles.php
+
+```php
+// config/bundles.php
+return [
+    //..
+    ProxiCMS\ContentBundle\ProxiCMSContentBundle::class => ['all' => true],
+];
+```
+
+### Step 3: Add the MenuItem in your Dashboard EasyAdmin
+
+```php
+// src/Controller/Admin/DashboardController.php
+public function configureMenuItems(): iterable
+    {
+        //...
+        yield MenuItem::linkToCrud('Contenus', 'fas fa-pager', Content::class)
+                    ->setController(ContentCrudController::class);
+    }
+```
+
+or you can create your own `ContentCrudController` and extends this controller.
+
+### Step 4: Add the migrations in your app
+
+
+```yaml
+# config/doctrine_migrations.yaml
+doctrine_migrations:
+    migrations:
+        - 'ProxiCMS\ContentBundle\Migrations\MySQL0100'
+```
