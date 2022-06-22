@@ -1,6 +1,6 @@
 # ProxiCMS - ContentBundle
 
-[![Latest Stable Version](http://poser.pugx.org/proxilog/proxicms-content-bundle/v)](https://packagist.org/packages/proxilog/proxicms-content-bundle)
+[![Latest Stable Version](https://poser.pugx.org/proxilog/proxicms-content-bundle/v)](https://packagist.org/packages/proxilog/proxicms-content-bundle)
 
 ***/!\  Attention, tant que la version 1.0.0 n'est pas sortie, des "breaking changes" sont possible !***
 
@@ -9,7 +9,6 @@ Ce Bundle permet de gérer la gestion de contenu du CMS ProxiCMS.
 ## TODO
 
 * TODO faire le [Recipes](https://github.com/symfony/recipes-contrib) installation
-* Vérifier les dépendances du `composer.json`
 * gérer l'intégration de la migration (services ?)
 * gérer les Tests
 * Terminer la documentation
