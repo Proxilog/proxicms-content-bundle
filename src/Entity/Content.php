@@ -5,9 +5,11 @@ namespace ProxiCMS\ContentBundle\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use ProxiCMS\ContentBundle\Repository\ContentRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ContentRepository::class)]
 #[ORM\Table(name: 'proxicms_content')]
+#[Assert\EnableAutoMapping]
 class Content implements ContentInterface
 {
     public const CATEGORIES_DATA = ['contact', 'setting'];

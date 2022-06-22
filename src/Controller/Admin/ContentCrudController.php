@@ -55,7 +55,7 @@ class ContentCrudController extends AbstractCrudController
             ->setPermission('ROLE_SUPER_ADMIN')
             ->setHelp('Une fois activé et validé, vous aurez un éditeur de text amélioré');
         yield ChoiceField::new('category', 'Catégorie')->setColumns(4)
-                ->setChoices(array_flip(Content::getCategories()))
+                ->setTranslatableChoices(Content::getCategories())
                 ->setPermission('ROLE_SUPER_ADMIN');
         yield TextField::new('identifier', 'Identifiant')->setColumns(6)
             ->setPermission('ROLE_SUPER_ADMIN')
